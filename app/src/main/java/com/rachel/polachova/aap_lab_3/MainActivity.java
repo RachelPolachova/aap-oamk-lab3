@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 		setupMenusButton();
 		setupExternalButton();
 		setupZooButton();
+		setupTimerButton();
 	}
 
 	private void setupMenusButton() {
@@ -49,6 +50,17 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(MainActivity.this, ZooActivity.class);
+				startActivity(i);
+			}
+		});
+	}
+
+	private void setupTimerButton() {
+		Button timerBtn = findViewById(R.id.egg_timer);
+		timerBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(MainActivity.this, EggTimerActivity.class);
 				startActivity(i);
 			}
 		});
