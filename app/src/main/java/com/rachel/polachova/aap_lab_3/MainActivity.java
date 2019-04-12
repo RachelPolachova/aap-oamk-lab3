@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
 	private void setupButtons() {
 		setupMenusButton();
+		setupExternalButton();
 	}
 
 	private void setupMenusButton() {
@@ -25,6 +26,17 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(MainActivity.this, MenusActivity.class);
+				startActivity(i);
+			}
+		});
+	}
+
+	private void setupExternalButton() {
+		Button externalBtn = findViewById(R.id.external_activities);
+		externalBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(MainActivity.this, ExternalActivity.class);
 				startActivity(i);
 			}
 		});
