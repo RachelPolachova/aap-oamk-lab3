@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 	private void setupButtons() {
 		setupMenusButton();
 		setupExternalButton();
+		setupZooButton();
 	}
 
 	private void setupMenusButton() {
@@ -37,6 +38,17 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(MainActivity.this, ExternalActivity.class);
+				startActivity(i);
+			}
+		});
+	}
+
+	private void setupZooButton() {
+		Button zooBtn = findViewById(R.id.zoo);
+		zooBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(MainActivity.this, ZooActivity.class);
 				startActivity(i);
 			}
 		});
